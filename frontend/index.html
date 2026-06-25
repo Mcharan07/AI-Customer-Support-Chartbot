@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Customer Support</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <div class="app-wrapper">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <div class="brand">
+          <div class="brand-icon">💬</div>
+          <div>
+            <div class="brand-name">SupportAI</div>
+            <div class="brand-tagline">Powered by Charan+</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sidebar-section-label">Quick Topics</div>
+      <div class="quick-topics">
+        <button class="topic-btn" data-msg="How do I reset my password?">🔑 Reset Password</button>
+        <button class="topic-btn" data-msg="Where is my order? Can you help me track it?">📦 Track My Order</button>
+        <button class="topic-btn" data-msg="How do I request a refund?">💳 Request a Refund</button>
+        <button class="topic-btn" data-msg="How do I cancel my subscription?">❌ Cancel Subscription</button>
+        <button class="topic-btn" data-msg="What are your business hours and contact options?">🕐 Business Hours</button>
+        <button class="topic-btn" data-msg="I'm having trouble logging into my account.">🔐 Login Issues</button>
+        <button class="topic-btn" data-msg="How do I update my billing information?">🏦 Billing Info</button>
+        <button class="topic-btn" data-msg="What is your return policy?">📋 Return Policy</button>
+      </div>
+
+      <div class="sidebar-footer">
+        <button id="clear-btn" class="clear-btn">🗑 Clear Chat</button>
+      </div>
+    </aside>
+
+    <!-- Main Chat -->
+    <main class="chat-main">
+
+      <!-- Header -->
+      <header class="chat-header">
+        <div class="agent-info">
+          <div class="agent-avatar">🤖</div>
+          <div>
+            <div class="agent-name">Support Assistant</div>
+            <div class="agent-status"><span class="status-dot"></span> Online — ready to help</div>
+          </div>
+        </div>
+        <div class="header-badge">AI Powered</div>
+      </header>
+
+      <!-- Messages -->
+      <div class="messages-area" id="messages-area">
+        <!-- Welcome message injected by JS -->
+      </div>
+
+      <!-- Typing indicator -->
+      <div class="typing-bar" id="typing-bar" style="display:none;">
+        <div class="typing-bubble">
+          <span></span><span></span><span></span>
+        </div>
+        <div class="typing-label">Assistant is typing…</div>
+      </div>
+
+      <!-- Input -->
+      <div class="input-area">
+        <textarea
+          id="user-input"
+          placeholder="Type your support question here…"
+          rows="1"
+          maxlength="2000"
+        ></textarea>
+        <button id="send-btn" title="Send message">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="22" y1="2" x2="11" y2="13"></line>
+            <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+          </svg>
+        </button>
+      </div>
+      <div class="input-hint">Press <kbd>Enter</kbd> to send · <kbd>Shift+Enter</kbd> for new line</div>
+
+    </main>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
