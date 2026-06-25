@@ -1,171 +1,178 @@
-# AI Customer Support Chatbot
+# 🤖 AI Customer Support Chatbot
 
-A full-stack AI-powered customer support chatbot built with:
-- **Frontend**: HTML, CSS, Vanilla JavaScript
-- **Backend**: Python (Flask)
-- **AI**: Anthropic Claude (claude-sonnet-4-6)
+An AI-powered customer support chatbot built using **Python (Flask)** for the backend and **HTML, CSS, JavaScript** for the frontend. The chatbot integrates with the **Google Gemini API** to provide intelligent responses to customer queries.
 
 ---
 
-## Project Structure
+## 📌 Features
+
+- 💬 AI-powered customer support
+- ⚡ Fast and responsive interface
+- 🔐 Secure API key management using `.env`
+- 🌐 Flask REST API backend
+- 🎨 Clean HTML, CSS & JavaScript frontend
+- 📱 Responsive design
+
+---
+
+## 📂 Project Structure
 
 ```
 ai-customer-support-chatbot/
 │
-├── frontend/
-│   ├── index.html          ← Main HTML page
-│   ├── css/
-│   │   └── style.css       ← All styles
-│   └── js/
-│       └── script.js       ← Chat logic, API calls
-│
 ├── backend/
-│   ├── app.py              ← Flask app entry point
-│   ├── routes.py           ← API route definitions
-│   └── utils.py            ← AI call logic + system prompt
+│   ├── app.py              # Flask application
+│   ├── routes.py           # API routes
+│   ├── utils.py            # Helper functions
+│   ├── .env                # Environment variables (Not uploaded)
+│   └── venv/               # Virtual environment (Ignored)
 │
-├── .env                    ← API keys (never commit this)
-├── requirements.txt        ← Python dependencies
+├── frontend/
+│   ├── index.html
+│   ├── css/
+│   │   └── style.css
+│   └── js/
+│       └── script.js
+│
+├── requirements.txt
+├── .gitignore
 └── README.md
 ```
 
 ---
 
-## Setup & Installation
+## 🛠️ Technologies Used
 
-### 1. Clone the repository
+### Backend
+- Python
+- Flask
+- Google Gemini API
+- python-dotenv
+
+### Frontend
+- HTML5
+- CSS3
+- JavaScript
+
+---
+
+## 🚀 Installation
+
+### Clone the repository
+
 ```bash
-git clone https://github.com/yourusername/ai-customer-support-chatbot.git
-cd ai-customer-support-chatbot
+git clone https://github.com/<your-username>/AI-CUSTOMER-SUPPORT-CHATBOT.git
 ```
 
-### 2. Set up the backend
+```bash
+cd AI-CUSTOMER-SUPPORT-CHATBOT
+```
+
+---
+
+### Create Virtual Environment
+
+Windows
 
 ```bash
-# Create and activate a virtual environment
-python -m venv venv
+python -m venv backend/venv
+```
 
-# On Windows:
-venv\Scripts\activate
+Activate
 
-# On macOS/Linux:
-source venv/bin/activate
+```bash
+backend\venv\Scripts\activate
+```
 
-# Install dependencies
+---
+
+### Install Dependencies
+
+```bash
 pip install -r requirements.txt
 ```
 
-### 3. Configure environment variables
+---
 
-Edit `.env` and add your Anthropic API key:
+### Configure Environment Variables
+
+Create a `.env` file inside the `backend` folder.
+
+```env
+GEMINI_API_KEY=YOUR_GEMINI_API_KEY
 ```
-ANTHROPIC_API_KEY=your_actual_api_key_here
-```
 
-Get your key from: https://console.anthropic.com/
+---
 
-### 4. Run the backend
+### Run the Backend
 
 ```bash
 cd backend
 python app.py
 ```
 
-Backend will start at: `http://localhost:5000`
+The Flask server will start on:
 
-### 5. Open the frontend
-
-Open `frontend/index.html` in your browser directly,
-OR use VS Code Live Server extension for best results.
-
----
-
-## API Endpoints
-
-| Method | Endpoint      | Description                          |
-|--------|---------------|--------------------------------------|
-| GET    | `/`           | API info and available endpoints     |
-| POST   | `/api/chat`   | Send a message, receive AI reply     |
-| POST   | `/api/clear`  | Clear the conversation session       |
-| GET    | `/api/health` | Health check                         |
-
-### POST `/api/chat` — Request body
-```json
-{
-  "message": "How do I reset my password?",
-  "history": [
-    { "role": "user", "content": "Hello" },
-    { "role": "assistant", "content": "Hi! How can I help?" }
-  ]
-}
 ```
-
-### POST `/api/chat` — Response
-```json
-{
-  "reply": "To reset your password, go to the login page and click...",
-  "status": "ok"
-}
+http://127.0.0.1:5000
 ```
 
 ---
 
-## Features
+### Open the Frontend
 
-- **AI-powered responses** via Anthropic Claude
-- **Conversation memory** — full history sent with each message
-- **Quick topic shortcuts** in the sidebar
-- **Typing indicator** while AI is generating a response
-- **Error handling** with user-friendly messages
-- **Clear chat** button to start a fresh conversation
-- **Responsive design** — works on mobile and desktop
-- **Auto-resizing** message input
+Open
 
----
-
-## GitHub Workflow
-
-```bash
-# Work on dev branch
-git checkout -b dev
-
-# Make changes, then commit
-git add .
-git commit -m "feat: add password reset flow"
-
-# Push to remote
-git push origin dev
-
-# Merge to main when ready
-git checkout main
-git merge dev
-git push origin main
+```
+frontend/index.html
 ```
 
----
-
-## Environment Variables
-
-| Variable          | Description                        | Required |
-|-------------------|------------------------------------|----------|
-| `ANTHROPIC_API_KEY` | Your Anthropic API key           | Yes      |
-| `FLASK_ENV`       | `development` or `production`      | No       |
-| `FLASK_DEBUG`     | `true` or `false`                  | No       |
-| `SECRET_KEY`      | Flask session secret key           | No       |
+in your browser.
 
 ---
 
-## Tech Stack
+## 📸 Screenshots
 
-| Layer    | Technology              |
-|----------|-------------------------|
-| Frontend | HTML5, CSS3, JavaScript |
-| Backend  | Python 3.10+, Flask     |
-| AI Model | Anthropic Claude Sonnet |
-| CORS     | flask-cors              |
+Add screenshots of:
+
+- Home Page
+- Chat Interface
+- AI Responses
 
 ---
 
-## License
+## 📖 How It Works
 
-MIT License — free to use and modify.
+1. User enters a message.
+2. JavaScript sends the message to the Flask backend.
+3. Flask processes the request.
+4. Google Gemini API generates a response.
+5. The response is displayed in the chat interface.
+
+---
+
+## 📌 Future Improvements
+
+- User Authentication
+- Chat History
+- Database Integration
+- Voice Input
+- Multi-language Support
+- Dark Mode
+- File Upload Support
+
+---
+
+## 👨‍💻 Author
+
+**Charan Karthik Muppana**
+
+B.Tech – Artificial Intelligence & Machine Learning
+
+GitHub: https://github.com/Mcharan07
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License.
